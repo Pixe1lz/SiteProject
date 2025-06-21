@@ -23,6 +23,7 @@ header {
   }
 
   .logo img {
+    transition: all 0.4s ease;
     stroke: #283a57;
     stroke-width: 1;
   }
