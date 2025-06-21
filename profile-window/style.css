@@ -81,16 +81,17 @@ header {
 
   }
 
-  .logo:hover {
+  .logo img {
+    stroke: #283a57;
+    stroke-width: 1;
+  }
+
+  .logo img:hover{
     width: 70px;
     height: 70px;
     display: flex;
     justify-content: center;
-  }
-
-  .logo img {
-    stroke: #283a57;
-    stroke-width: 1;
+    margin-left: 5px; 
   }
 
   .logo-text {
@@ -142,7 +143,6 @@ header {
   }
 
 .user-icon:hover {
-  
   width: 70px;
   height: 70px;
   display: flex;

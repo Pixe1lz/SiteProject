@@ -27,6 +27,14 @@ header {
     stroke-width: 1;
   }
 
+  .logo img:hover{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px; 
+  }
+
   .logo-text {
     margin-left: 12px;
   }
