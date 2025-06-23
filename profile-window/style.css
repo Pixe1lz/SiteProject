@@ -25,7 +25,7 @@
   }
   .nickname {
     color: #4b6cb7;
-    margin-top: 6px;
+    margin-top: 2px;
     font-size: 14px;
   }
   form {
@@ -35,14 +35,14 @@
     display: block;
     color: #4b6cb7;
     font-size: 14px;
-    margin-bottom: 6px;
+    margin-bottom: 15px;
   }
   input[type="text"] {
     width: 100%;
     padding: 6px;
     border: none;
-    border-radius: 2px;
-    margin-bottom: 15px;
+    border-radius: 1px;
+    margin-bottom: 25px;
     box-sizing: border-box;
   }
   .posts-header {
