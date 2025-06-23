@@ -113,11 +113,16 @@ header {
     color: #112D4E;
   }
 
+  .nav-and-user-icon {
+    display: flex;
+    align-items: center;
+  }
+
   nav {
     display: flex;
-    gap: 20px;
+    align-items: center;
 
-    margin-right: -68%;
+    gap: 10px; 
   }
 
   nav a {
