@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Регистрация</title>
+<style>
+  body {
+    background: #F9F7F7;
+    font-family: Arial, sans-serif;
+    color: #243554;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .container {
+    background: #bac9dd;
+    padding: 20px;
+    width: 350px;
+  }
+  .header {
+    background: #a9b8cf;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .header svg {
+    width: 40px;
+    height: 40px;
+    stroke: #243554;
+    stroke-width: 2;
+    margin-right: 10px;
+  }
+  .header .text {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+  .header .subtext {
+    font-size: 11px;
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+  h2 {
+    text-align: center;
+    letter-spacing: 8px;
+    margin: 0 0 20px;
+  }
+  form {
+    background: #d6e0f0;
+    padding: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 20px;
+    border: none;
+    box-sizing: border-box;
+  }
+  button {
+    background: #a9b8cf;
+    border: 1px solid #243554;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    margin: 10px auto 5px;
+  }
+  button:hover {
+    background: #8b9aba;
+  }
+  .link {
+    text-align: center;
+    font-size: 11px;
+  }
+  .link a {
+    color: #243554;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="image/Logo-site.svg" height="70px" width="80px"></img>
+      <div>
+        <div class="text">ПЗЕВ</div>
+        <div class="subtext">Общение и посты</div>
+      </div>
+    </div>
+    <h2>Регистрация</h2>
+    <form>
+      <label for="nickname">Никнейм</label>
+      <input type="text" id="nickname" name="nickname" required />
+      <label for="password">Пароль</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Зарегистрироваться</button>
+      <div class="link">
+        <a href="#">Уже есть профиль</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
