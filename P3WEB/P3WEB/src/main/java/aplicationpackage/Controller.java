@@ -1,4 +1,5 @@
 package aplicationpackage;
+import org.springframework.web.bind.annotation.CrossOrigin; // добавлен
 
 
 import aplicationpackage.databaseApp.PostsColumn;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*") // Разрешает запросы с любого источника
 public class Controller {
 
     private final ServiceDb service;
