@@ -96,7 +96,7 @@
       </div>
     </div>
     <h2>Регистрация</h2>
-    <form>
+    <form id="registrationForm">
       <label for="nickname">Никнейм</label>
       <input type="text" id="nickname" name="nickname" required />
       <label for="password">Пароль</label>
@@ -106,6 +106,31 @@
         <a href="#">Уже есть профиль</a>
       </div>
     </form>
+    <div id="message"></div>
   </div>
 </body>
+<script> // ываыва
+      document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Предотвращаем стандартное поведение формы
+      const nickname = document.getElementById('nickname').value;
+      const password = document.getElementById('password').value;
+      fetch('http://localhost/SiteProject/Registration-window/registration.html', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nickname: nickname,
+          password_us: password
+        }),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Ошибка регистрации: ' + response.statusText);
+        }
+        return response.text();
+      })
+      console.log("регистрация прошла усешно")
+    });
+  </script>
 </html>

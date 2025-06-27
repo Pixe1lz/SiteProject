@@ -24,7 +24,7 @@ public class Controller {
     }
 
     //Создание профиля
-    @PostMapping("/users")
+    @PostMapping("/SiteProject/Registration-window/registration.html")
     public ResponseEntity<String> createUser(@RequestBody UsersColumn users) {
         try {
             service.createAccount(users.getNickname(), users.getPassword_us());
