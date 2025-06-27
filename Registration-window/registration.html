@@ -114,6 +114,7 @@
       event.preventDefault(); // Предотвращаем стандартное поведение формы
       const nickname = document.getElementById('nickname').value;
       const password = document.getElementById('password').value;
+
       fetch('http://localhost/SiteProject/Registration-window/registration.html', {
         method: 'POST',
         headers: {
@@ -131,6 +132,7 @@
         return response.text();
       })
       console.log("регистрация прошла усешно")
+      window.location.href = 'http://localhost/SiteProject/index.html';
     });
   </script>
 </html>

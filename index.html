@@ -60,7 +60,7 @@
     document.getElementById('submitPost').addEventListener('click', function() {
       const content = document.getElementById('postContent').value;
       const userId = 1; // Замените на актуальный ID пользователя
-      fetch('/post', {
+      fetch('http://localhost/SiteProject/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,6 +80,7 @@
         alert('Ошибка: ' + error.message);
       });
     });
+    
     // Обработчик для кнопки "Отмена"
     document.getElementById('cancelPost').addEventListener('click', function() {
       document.getElementById('postForm').style.display = 'none'; // Скрываем форму

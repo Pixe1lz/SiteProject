@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost") // Разрешает запросы с любого источника
+@CrossOrigin(origins = "*") // Разрешает запросы с любого источника
 public class Controller {
 
     private final ServiceDb service;
@@ -40,7 +40,7 @@ public class Controller {
         public String content;
     }
 
-    @PostMapping("/post")
+    @PostMapping("/SiteProject/index.html")
     public ResponseEntity<String> createPost(@RequestBody PostRequest request) {
         try {
             service.createPost(request.userid, request.content);
@@ -51,7 +51,7 @@ public class Controller {
     }
 
     //лайк
-    @PostMapping("/post/{postId}/likes")
+    @PostMapping("/SiteProject/index.html/{postId}/likes")
     public ResponseEntity<String>  likePost(@PathVariable int postId) {
         try{
             service.likePost(postId);
@@ -96,7 +96,7 @@ public class Controller {
     }
 
     //показ постов
-    @GetMapping("/posts")
+    @GetMapping("/SiteProject/posts")
     public ResponseEntity<List<PostsColumn>> getAllPost() {
         try {
             List<PostsColumn> posts =service.getAllPosts();
