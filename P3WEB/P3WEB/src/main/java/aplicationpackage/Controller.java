@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost") // Разрешает запросы с любого источника
+@CrossOrigin(origins = "*") // Разрешает запросы с любого источника
 public class Controller {
 
     private final ServiceDb service;
