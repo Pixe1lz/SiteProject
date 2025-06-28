@@ -25,8 +25,9 @@
     <div class="nav-and-user-icon">
 
     <nav>
-      <a href="#">Создать пост</a>
+      <a href="#" id="createPostLink">Создать пост</a>
       <a href="#">Сообщения</a>
+      <a href="Registration-window/registration.html">РЕГИСТРАЦИЯ</a>
     </nav>
 
     <a href="profile-window/profile.html">
@@ -36,5 +37,54 @@
   </div>
 
   </header>
+
+  <!-- Форма для создания поста -->
+  <div id="postForm" style="display:none;">
+    <h2>Создать пост</h2>
+    <textarea id="postContent" placeholder="Введите содержимое поста"></textarea>
+    <button id="submitPost">Отправить пост</button>
+    <button id="cancelPost">Отмена</button>
+  </div>
+
+<script>
+      console.log("JavaScript загружен");
+
+      // Обработчик для ссылки "Создать пост"
+    document.getElementById('createPostLink').addEventListener('click', function(event) {
+      event.preventDefault(); // Отменяем стандартное поведение ссылки
+      console.log("Ссылка 'Создать пост' нажата");
+      document.getElementById('postForm').style.display = 'block'; // Показываем форму
+    });
+
+          // Обработчик для кнопки "Отправить пост"
+    document.getElementById('submitPost').addEventListener('click', function() {
+      const content = document.getElementById('postContent').value;
+      const userId = 1; // Замените на актуальный ID пользователя
+      fetch('http://localhost/SiteProject/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userid: userId, content: content }),
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Пост создан');
+          document.getElementById('postForm').style.display = 'none'; // Скрываем форму
+          document.getElementById('postContent').value = ''; // Очищаем текстовое поле
+        } else {
+          return response.text().then(text => { throw new Error(text); });
+        }
+      })
+      .catch(error => {
+        alert('Ошибка: ' + error.message);
+      });
+    });
+    
+    // Обработчик для кнопки "Отмена"
+    document.getElementById('cancelPost').addEventListener('click', function() {
+      document.getElementById('postForm').style.display = 'none'; // Скрываем форму
+    });
+  </script>
 </body>
 </html>
